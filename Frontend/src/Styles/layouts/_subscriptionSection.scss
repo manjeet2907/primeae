@@ -1,0 +1,24 @@
+.subscribe_CTA{
+    height: 18rem;
+    display: flex;
+    padding: 3rem 15rem;
+    .subscribe_cta_desc{
+        p{
+            width: 70%;
+        }
+    }
+    .subscribe_cta_button{
+        h5{
+
+            color: $base3;
+            background-color: $primarycolor;
+            cursor: pointer;
+            padding: 0.5rem 2rem;
+            border-radius: 10rem;
+            &:hover{
+                background-color: $secondaryColor;
+            }
+        }
+    }
+    // background: url("../../assets/images/ribbons/subscribe-bg.jpg");
+}

@@ -1,0 +1,11 @@
+.sales-info{
+    background-color: $secondaryColor;
+    display: flex;
+    color: $primarycolor;
+    justify-content: space-between;
+    padding: 0.3rem 5rem;
+    span{
+        font-size: 1.6rem;
+        margin-left: 1rem;
+    }
+}

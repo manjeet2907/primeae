@@ -1,0 +1,43 @@
+.searchSection{
+    background-color: $base1;
+    height:6rem;
+    display:grid;
+    gap: 2rem;
+    grid-template-columns: 2fr 1.5fr 0.5fr;
+    padding: 0.3rem 5rem;
+    .logoSection{
+        color: $primarycolor;
+    }
+    .searchbarSection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: .2rem solid $primarycolor;
+        border-radius: 5rem;
+        padding: 0 1rem;
+        input{
+            background-color: transparent;
+            width: 100%;
+            height: 3rem;
+            font-size: 1.6rem;
+            outline: none;
+            border: 0px solid;
+            width: 90%;
+        }
+        button{
+            font-size: 2.4rem;
+            background-color: $primarycolor;
+            color: $base3;
+            border-radius: 100%;
+            width:5rem;
+            height: 5rem;
+            border: 0;
+        }
+
+    }
+    .cartIcon{
+        font-size: 2.4rem;
+        
+    }
+
+}

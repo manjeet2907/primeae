@@ -1,0 +1,45 @@
+.keyfacilities{
+    width:95%;
+    margin-top: 2rem;
+    margin: auto;
+    .keyfacilities_heading{
+        position: relative;
+        top:3rem;
+        left:0;
+        h4{
+           text-align: center; 
+           background-color: $base3;
+        }
+    }
+    .kefacilities_list{
+        margin-top: 1rem;
+        border: 0.5px solid $primarycolor-light;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap:2rem;
+        padding: 3rem 5rem;
+        height: 90%;
+        border-radius: 1rem;
+        .kefacilities_list_facility{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            border-right: 0.5px solid $primarycolor-light;
+            p{
+                margin-left: 2rem;
+            }
+        }
+        .kefacilities_list_facility_last{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            border-right: 0;
+            p{
+                margin-left: 2rem;
+            }
+        }
+        
+    }
+}

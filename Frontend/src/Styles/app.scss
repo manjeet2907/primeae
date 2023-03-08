@@ -1,0 +1,33 @@
+@import './themes/theme';
+@import './themes/typography';
+@import './components/Client/sales';
+@import './components/Client/searchsection';
+@import './components/Client/navbar';
+@import './layouts/footer';
+@import './layouts/subscriptionSection';
+@import './components/Client/keyfacilities';
+@import './layouts/categoriesContainer';
+@import './components/Products/productSection';
+
+*{
+    font-size: 62.7%;
+    @media screen and (max-width:1024px) {
+        font-size: 55%;
+    }
+    @media screen and (max-width:768px) {
+        font-size: 43%;
+    }
+}
+
+.App{
+    min-height: 100vh;
+    .screens{
+        min-height: 90vh;
+    }
+}
+a {
+    text-decoration: none;
+    :hover {
+    text-decoration:none; 
+    cursor:pointer;  
+}}
