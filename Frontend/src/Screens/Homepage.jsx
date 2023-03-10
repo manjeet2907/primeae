@@ -1,10 +1,11 @@
 import React from "react";
 import { KeyFacilities } from "../Components/Client";
-import { CategoryContainer, SubscriptionSection } from "../Layouts";
+import { CategoryContainer, MetaData, SubscriptionSection } from "../Layouts";
 
 const Homepage = () => {
   return (
-    <div>
+    <>
+      <MetaData title={"Prime Ae-Home"} />
       <KeyFacilities />
       <CategoryContainer />
       {/* New Products */}
@@ -12,7 +13,7 @@ const Homepage = () => {
       {/* Prime Products */}
       {/* Brands We deal in */}
       <SubscriptionSection />
-    </div>
+    </>
   );
 };
 

@@ -1,6 +1,21 @@
 import express from "express";
 
-import { createProduct } from "../Controllers/productController.js";
+import {
+  getAllProducts,
+  createProduct,
+  updateProduct,
+  deleteProduct,
+  getProductDetails,
+  createProductReview,
+  getProductReviews,
+  deleteReview,
+  getAdminProducts,
+} from "../Controllers/productController.js";
+
+import {
+  isAuthenticatedUser,
+  authorizeRoles,
+} from "../middlewares/authentication.js";
 
 const router = express.Router();
 
