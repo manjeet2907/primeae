@@ -1,0 +1,13 @@
+.signinup_page{
+    display: grid;
+    width:80vw;
+    margin: auto;
+    grid-template-columns: 1fr 1fr ;
+    column-gap: 10rem;
+    @media screen and (max-width:768px) {
+        grid-template-columns: 1fr ;
+        row-gap: 5rem;
+
+    }
+   
+}

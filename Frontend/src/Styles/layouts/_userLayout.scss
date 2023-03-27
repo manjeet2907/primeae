@@ -1,0 +1,12 @@
+.userLayout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.two_grid_layout{
+    background-color: $base3;
+    padding: 3rem;
+
+}

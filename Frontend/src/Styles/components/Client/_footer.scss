@@ -1,0 +1,90 @@
+.footer{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem 5rem;
+    margin-bottom: 5rem;
+   .footer-leftSide{
+    flex: 0.3;
+        h4{
+            color: $primarycolor;
+        }
+        .discp{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: $font-size-h3;
+            height: 3.5rem;
+                span{
+                    margin-left: 2rem;
+                    font-size: $font-size-h5;
+                }
+            
+            .footer_icon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $base3;
+                background-color: $primarycolor;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+                margin-right: 2rem;
+                margin-top: 1rem;
+            }
+        }
+   } 
+   @media screen and (max-width: 480px) and (min-width: 0px){
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 2rem;
+      align-items: first baseline;
+      .footer-leftSide{
+        flex:1;
+        h4{
+            font-size: $font-size-h1;
+        }
+        .discp{
+            display: flex;
+            justify-content: flex-start;
+            font-size: $font-size-h3;
+            h5{
+                display: flex;
+                align-items: baseline;
+                font-size: $font-size-h5;
+                span{
+                    margin-left: 2rem;
+                    font-size: $font-size-h5;
+    
+                }
+            }
+            .footer_icon{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $base3;
+                background-color: $primarycolor;
+                height: 3rem;
+                width: 3rem;
+                border-radius: 50%;
+                margin-right: 2rem;
+            }
+        }
+      }
+    }
+   .footer_rightSide{
+    flex:0.7;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap:3rem;
+    @media screen and (max-width: 480px) and (min-width: 0px){
+      display: flex;
+      flex-wrap: wrap;
+      flex:1;
+    }
+     h5{
+        margin-bottom: 2rem;
+     }
+   }
+}

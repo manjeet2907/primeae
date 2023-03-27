@@ -1,0 +1,22 @@
+.profileContainer {
+    width: 70vw;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+ .profileContainer_left{
+    display: flex;
+    margin-right: 5rem;
+    flex-direction: column;
+    a{
+       font-size: $font-size-h3; 
+    }
+ }
+ .profileContainer_right{
+    display: flex;
+    flex-direction: column;
+    a{
+        font-size: $font-size-h3;
+    }
+ }
+}

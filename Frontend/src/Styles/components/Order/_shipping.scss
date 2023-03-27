@@ -1,0 +1,64 @@
+.shippingpage {
+    width: 90vw;
+    margin: 2rem auto;
+    margin:1rem auto;
+    display: flex;
+  
+    flex-direction: column;
+  .shippingpage_Box{
+    background-color: white;
+    width: 60vw;
+    margin: auto;
+    height: 90vh;
+    .shippingHeading{
+        text-align: center;
+        color: $primarycolor;
+        font-size: $font-size-h3;
+        padding: 1.3rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+        margin: auto;
+    }
+    .shippingForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+        padding: 2rem;
+        justify-content: space-evenly;
+        transition: all 0.5s;
+        .forminput{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            input , select{
+                font-size: $font-size-p;
+                padding: 1rem 4rem;
+                width: 100%;
+                box-sizing: border-box;
+                border: 0.1rem solid rgba(0, 0, 0, 0.267);
+                border-radius: 0.5rem;
+                outline: none;
+                margin-top: 1rem;
+
+            }
+        }
+        input[type='submit']{
+            font-size: $font-size-p;
+            background-color: $primarycolor;
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            width: 100%;
+            border:0.1rem solid $primarycolor-dark;
+            outline: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 1s;
+            &:hover{
+                background-color: $primarycolor-dark;
+                color: $base3;
+            }
+        }
+    }
+      
+  }
+}

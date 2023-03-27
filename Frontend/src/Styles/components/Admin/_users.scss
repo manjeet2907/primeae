@@ -1,0 +1,12 @@
+.userspage_admin{
+    min-width: 80rem;
+    display: flex;
+    flex-direction: column;
+    width: 80rem;
+    margin: 1rem auto;
+    justify-content: center;
+    align-items: center;
+    .usersList{
+        min-width: 80rem;
+    }
+}

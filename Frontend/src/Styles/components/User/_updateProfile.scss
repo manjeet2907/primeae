@@ -1,0 +1,61 @@
+.updateProfilePage{
+    width: 70%;
+    margin: 1rem auto;
+    .updateProfileBox {
+        overflow: hidden;
+        .updateProfileHeading{
+            color: $primarycolor;
+            margin-bottom: 2rem;
+
+        }
+        .updateProfileForm{
+            padding: 2rem;
+            width: 70rem;
+            border: 0.1rem solid $primarycolor;
+            border-radius: 2rem;
+            .updateProfileName,.updateProfileEmail{
+                display: flex;
+                margin: 1rem;
+            }
+            input{
+                width: 100%;
+                font-size: $font-size-p;
+                padding: 1rem 2rem;
+                border-radius: 2rem;
+                border: 0.1rem solid $primarycolor;
+            }
+            #updateProfileImage{
+                display: flex;
+                margin-bottom: 2rem;
+                 input{
+                    width: 100%;
+                    font-size: $font-size-p;
+                    padding: 1rem 2rem;
+                    border-radius: 2rem;
+                    border: 0.1rem solid $primarycolor;
+                }
+                img{
+                    width: 15rem;
+                    height: 15rem;
+                    object-fit: contain;
+                    object-position: center;
+                }
+                
+            }
+            input[type="submit"]{
+                    width: 100%;
+                    font-size: $font-size-p;
+                    padding: 1rem 2rem;
+                    border-radius: 2rem;
+                    background-color: $primarycolor;
+                    border: 0.1rem solid $primarycolor;
+                    transition: all 1s;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: $primarycolor-dark;
+                    }
+                }
+
+        }
+}
+}

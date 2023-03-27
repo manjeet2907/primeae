@@ -1,14 +1,66 @@
+.navbar{
+background-color: $base2;
+}
 .mainNavbar{
-    background-color: $base2;
     font-size: $font-size-h4;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     height: 4.6rem;
-    padding: 0 5rem;
+    width:95vw;
+    margin:auto;
+    @media screen and (max-width: 1024px) and (min-width: 734px){
+       padding: 0rem 0rem; 
+    }
+    @media screen and (max-width: 734px) and (min-width: 0px){
+       padding: 0rem 0rem; 
+       width:100vw;
+    }
     .leftSide_navbar{
         position: relative;
         width:100%;
+        .dropdown{
+            z-index: 99;
+            user-select: none;
+            width:30rem;
+            position: absolute;
+            left: 0;
+            top:-2.3rem;
+            h3{
+                font-size: $font-size-h2;
+                background-color: $secondaryColor;
+                color:$base3;
+                cursor: pointer;
+                span{
+                    font-size: 3.4rem;
+                    color:$primarycolor;
+                    margin-right: 1rem;
+                    padding-left: 1rem;
+                }
+            }
+            .menu{
+                background-color: $primarycolor;
+                position: relative;
+                left:50%;
+                font-size: $font-size-h3;
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                padding: 0.5rem 0rem;
+                .menu-item{
+                    padding: 0.5rem 1rem;
+                    color: $base3;
+                    padding-bottom: 0.2rem;
+                    border-bottom: 0.1rem solid $primarycolor-dark;
+                    background-color: $primarycolor;
+                    &:hover{
+                        background-color: $primarycolor-dark;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 734px) and (min-width: 469px){
         .dropdown{
             z-index: 99;
             // user-select: none;
@@ -27,24 +79,41 @@
                 }
             }
             .menu{
-                background-color: $primarycolor;
-                position: relative;
-                left:50%;
-                font-size: $font-size-h3;
-                list-style: none;
-                padding: 0.5rem 2rem;
+                left:0%;
+                padding: 0.5rem 1rem;
                 .menu-item{
-                    color: $base3;
                     padding-bottom: 0.2rem;
-                    border-bottom: 0.1rem solid $primarycolor-dark;
-                    background-color: $primarycolor;
-                    &:hover{
-                        background-color: $primarycolor-dark;
-                        cursor: pointer;
-                    }
                 }
             }
         }
+    }
+        @media screen and (max-width: 468px) and (min-width: 0px){
+        .dropdown{
+            z-index: 99;
+            // user-select: none;
+            width:30rem;
+            position: absolute;
+            left: 0;
+            top:-2.3rem;
+            h3{
+                font-size: $font-size-h2;
+                background-color: $secondaryColor;
+                color:$base3;
+                cursor: pointer;
+                span{
+                    font-size: $font-size-h2;
+                    color:$primarycolor;
+                }
+            }
+            .menu{
+                left:0%;
+                padding: 0.5rem 1rem;
+                .menu-item{
+                    padding-bottom: 0.2rem;
+                }
+            }
+        }
+    }
     }
     .rightSide_navbar{
         display: flex;
@@ -56,16 +125,85 @@
             margin:0 0.8rem;
             align-self: center;
             padding: 0.5rem 1rem;
+            min-width:max-content;
+             &:hover{
+                background-color:$primarycolor;
+                color:$base3;
+                border:0.1rem solid $primarycolor-dark;
+
+            }
             a{
                 color:$secondaryColor;
                 text-decoration: none;
             }
-            :hover{
-                background-color:$primarycolor;
+           
+        } 
+        @media screen and (max-width: 1024px) and (min-width: 734px){
+            padding: 0.1rem 0.5rem;
+            margin:0 0.8rem;
+        }
+        @media screen and (max-width: 734px) and (min-width: 0px){
+             display: none;
+        }
+    }
+    .navbar_mobile{
+        display: none;
+        @media screen and (max-width: 734px) and (min-width: 0px){
+        display: flex;
+        position: relative;
+        width:100vw;
+        h3{
+            position: fixed;
+            right: 2rem;
+        }
+        .dropdown{
+            z-index: 99;
+            user-select: none;
+            width:10rem;
+            position: absolute;
+            right: 5rem;
+            top:-2.3rem;
+            h3{
+                width:4rem;
+                height:4.6rem;
+                display: grid;
+                place-content: center;
+                line-height:4.6rem; 
+                font-size: 4.6rem;
+                background-color: $secondaryColor;
                 color:$base3;
+                cursor: pointer;
+                span{
+                    font-size: $font-size-h2;
+                    color:$primarycolor;
+                }
+            }
+            .menu{
+                background-color: $primarycolor;
+                position: relative;
+                right:40%;
+                top: 3rem;
+                width: 15rem;
+                font-size: $font-size-h3;
+                list-style: none;
+                padding: 0.5rem 0rem;
+                .mobile_navbarItem{
+                    color: $base3;
+                    padding-bottom: 0.2rem;
+                    border-bottom: 0.1rem solid $primarycolor-dark;
+                    background-color: $primarycolor;
+                    a{
+                        font-size: $font-size-p;
+                        text-decoration: none;
+                        color: $base3;
+                        
+                    }
+                    &:hover{
+                        background-color: $primarycolor-dark;
+                        cursor: pointer;
+                    }
+                }
             }
         }
-       
-        
     }
-}
+    }}

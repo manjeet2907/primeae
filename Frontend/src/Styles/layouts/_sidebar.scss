@@ -1,0 +1,16 @@
+.sidebar_container{
+    padding: 2rem;
+    min-width: 20vw;
+    min-height: 100vh;
+    color: $secondaryColor-light;
+    border-right: 0.1rem solid $primarycolor-light;
+    transition: 1s all cubic-bezier(0.75, 0.82, 0.165, 1);
+        &:hover{
+            color: $secondaryColor;
+        }
+    .filterbox{
+        position: sticky;
+        top: 14rem;
+    }
+
+}

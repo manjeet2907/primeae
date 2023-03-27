@@ -1,0 +1,20 @@
+.main_container{
+    width: 80vw;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: $base1;
+    border-left: 0.1rem solid $primarycolor-light;
+    transition: 1s all cubic-bezier(0.75, 0.82, 0.165, 1);
+        &:hover{
+            color: $secondaryColor;
+        }
+    .main_container_heading{
+        font-size: $font-size-h3;
+        .main_container_heading_content{
+            display: flex;
+            justify-content: space-between;
+            
+            font-size: $font-size-h3;
+        }
+    }
+}

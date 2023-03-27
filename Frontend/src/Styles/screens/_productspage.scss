@@ -1,0 +1,33 @@
+.filterbox{
+    font-size: $font-size-p;
+    p{
+        font-size: $font-size-h3;
+    }
+    .filterbox_categorybox{
+        .filterbox_category{
+            list-style: none;
+            color: $secondaryColor;
+            font-size: $font-size-p;
+            margin: 0.4rem;
+            cursor: pointer;
+            transition: all 0.5s;
+           
+        }
+         .selectedcategory{
+                font-size: 1.4rem;
+                color: $primarycolor-dark;
+            }
+    }
+    .MuiSlider-valueLabel{
+        font-size: $font-size-h3;
+    }
+    
+}
+.allProductsContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 25rem);
+    gap: 1rem;
+    justify-content: space-evenly;
+    align-content: center;
+    padding: 1rem;
+}

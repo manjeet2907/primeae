@@ -1,7 +1,7 @@
-import Footer from "./Footer";
-import Header from "./Header";
-import SubscriptionSection from "./SubscriptionSection";
-import CategoryContainer from "./CategoryContainer";
 import MetaData from "./MetaData";
+import UserLayout from "./UserLayout";
+import Sidebar from "./Sidebar";
+import MainContainer from "./MainContainer";
+import Dashboard from "./Dashboard";
 
-export { MetaData, Footer, Header, SubscriptionSection, CategoryContainer };
+export { MetaData, UserLayout, Sidebar, MainContainer, Dashboard };

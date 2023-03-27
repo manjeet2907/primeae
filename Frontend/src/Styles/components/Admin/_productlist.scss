@@ -1,0 +1,89 @@
+.productsPage{
+    font-size: 5rem;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    margin: 1rem auto;
+    justify-content: center;
+  
+}
+.addProduct{
+    .createProductForm{
+        .basicDetails{
+            .inputData{
+            display: flex;
+            flex-direction: column;
+            input {
+            max-width: 70rem;
+            font-size: 1.4rem;
+            color: $secondaryColor;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            margin: 1rem;
+            }
+            label {
+            font-size: 1.8rem;
+            }
+            }
+            .textarea{
+                font-size: $font-size-p;
+                padding: 1rem 2rem;
+            }
+        }
+        
+        .selectboxes{
+            margin: 2rem;
+            display: flex;
+            justify-content: space-around;
+            width: 60rem;
+            select{
+                font-size: $font-size-h4;
+                margin-right: 2rem;
+            }
+            }
+            input{
+                font-size: $font-size-p;
+            }
+
+        .actions{
+            margin: 2rem;
+            
+        }
+        .productImageUpload{
+            #createProductFormImage{
+                display: flex;
+                img{
+                    height: 5rem;
+                }
+            }
+        }
+        .checkboxes{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+           
+            label {
+                display: flex;
+                align-items: center;
+                margin-bottom: 2rem;
+                p{
+                   font-size: $font-size-h4; 
+                   margin-left: 2rem;   
+                }
+                input{
+                font-size: $font-size-h4;
+                width: 3rem;
+                height: 3rem;
+                }
+            }
+        }
+}}
+
+  .reacticons_admin{
+        font-size: 4rem;
+        background-color: transparent;
+        color: $primarycolor;
+        outline: none;
+        border: none;
+        cursor: pointer;
+      }

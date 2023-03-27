@@ -1,0 +1,16 @@
+.inputData{
+    display: flex;
+    flex-direction: column;
+    input {
+        max-width:100%;
+        font-size: 1.4rem;
+        color: $secondaryColor;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        margin: 1rem;
+    }
+
+    label {
+        font-size: 1.8rem;
+    }
+}

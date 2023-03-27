@@ -1,0 +1,38 @@
+.shopbybrandpage{
+    width: 90vw;
+    margin: 1rem auto;
+    .allBrandsDisplay{
+    display: flex;
+    justify-content: center;
+    max-width: 70rem;
+    margin: 2rem auto;
+    flex-wrap: wrap;
+    .brand{
+        display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            max-width: 15rem;
+            padding: 1rem;
+            margin: 3rem;
+            border: 0.1rem solid $primarycolor;
+            transition: .5s ease all;
+            &:hover{
+            border: 0.3rem solid $primarycolor-dark;
+            
+            }
+            img{
+                mix-blend-mode: multiply;
+                height: 10rem;
+                object-fit: contain;
+                object-position: center;
+            }
+            p{
+                text-align: center;
+                background-color: $base3;
+                font-weight: bold;
+                text-transform: capitalize;
+            }
+
+    }
+}
+}

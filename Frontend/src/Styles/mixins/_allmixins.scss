@@ -1,0 +1,74 @@
+.selectable_underline{
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+.selectable{
+    &:hover{
+
+        cursor: pointer;
+    }
+   
+}
+.selectable_underline_colWhite{
+    cursor: pointer;
+    transition: 1s all;
+    &:hover{
+        text-decoration: underline;
+        color: $base3;
+    }
+}
+.selectable_underline_colpri{
+    cursor: pointer;
+    transition: 1s all;
+    &:hover{
+        text-decoration: underline;
+        color: $primarycolor;
+    }
+}
+.cursor_colWhite{
+    cursor: pointer;
+    transition: 1s all;
+    &:hover{
+        color: $base3;
+    }
+}
+.selectable_colPrimary{
+    cursor: pointer;
+    transition: 1s all;
+    &:hover{
+        color: $primarycolor;
+    }
+}
+.selectable_colPrimary-d{
+    cursor: pointer;
+    transition: 1s all;
+    &:hover{
+        color: $primarycolor-dark;
+    }
+}
+
+.primary_button{
+    min-width: 17rem;
+    width: auto;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 1.2rem;
+    background-color: $primarycolor;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    transition: 1s all;
+    &:hover {
+        background-color: $primarycolor-light;
+        color: $secondaryColor;
+        border: 1px solid $primarycolor-dark;
+        font-size: 1.3rem;
+}}

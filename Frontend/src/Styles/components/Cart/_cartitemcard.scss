@@ -1,0 +1,50 @@
+.cartItemCard {
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr 1fr;
+    padding: 1rem;
+    align-items: center;
+    height: 8rem;
+    align-items: flex-start;
+    border-bottom: 0.1rem solid $primarycolor;  
+    .productdets{
+        display: flex;
+        margin: 0.3rem 1rem;
+        .productdets_img{
+            img{
+                width: 5rem;
+            }
+        }
+        .productdets_dets{
+            a{
+                font-size: $font-size-p;
+                color: $secondaryColor;
+                text-decoration: none;
+            }
+            span{
+                font-size: $font-size-p;
+    
+            }
+        }
+        
+    } 
+    .cartItem_qty{
+        .cartInput{
+            button{
+                font-size: $font-size-p;
+                width:2rem;
+            }
+            input{
+                font-size: $font-size-p;
+                width: 4rem;
+                text-align: center;
+            }
+        }
+    }
+    .cartItemCard_action{
+        p{
+            font-size: 3rem;
+            color: tomato;
+        }
+    }
+  
+}

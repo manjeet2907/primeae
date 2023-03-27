@@ -1,0 +1,49 @@
+.paymentpage{
+    display: grid;
+    place-items: center;
+    margin: 2rem;
+    .paymentcard{
+        width: 100%;
+        border: 0.1rem solid $primarycolor;
+        height: 100%;
+        min-width: 50rem;
+        background-color: $base3;
+        p{
+            font-size: $font-size-p;
+            color: $secondaryColor;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.13);
+            padding: 1vmax 0;
+            text-align: center;
+            margin: auto;
+        }
+        .cardInputs{
+            align-items: center;
+            margin: 2rem;
+            font-size: $font-size-p;
+            .reacticons{
+                display: flex;
+                align-items: center;
+                
+                span{
+                    font-size: $font-size-p;
+                    margin-left: 1rem;
+                }
+            }
+        }
+      
+        .paymentFormBtn {
+            border: none;
+            background-color: $primarycolor;
+            color: $base3;
+            font-size: $font-size-p;
+            width: 100%;
+            padding: 0.8vmax;
+            cursor: pointer;
+            transition: all 0.5s;
+            outline: none;
+            &:hover{
+                background-color: $primarycolor-dark;
+            }
+        }
+    }
+}

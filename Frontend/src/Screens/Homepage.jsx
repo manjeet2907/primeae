@@ -1,6 +1,10 @@
 import React from "react";
-import { KeyFacilities } from "../Components/Client";
-import { CategoryContainer, MetaData, SubscriptionSection } from "../Layouts";
+import {
+  CategoryContainer,
+  KeyFacilities,
+  SubscriptionSection,
+} from "../Components/Client";
+import { MetaData } from "../Layouts";
 
 const Homepage = () => {
   return (

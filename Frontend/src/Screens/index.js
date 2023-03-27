@@ -1,19 +1,19 @@
 import Homepage from "./Homepage";
-import Accessories from "./Accessories";
 import CustomerSupport from "./CustomerSupport";
 import AboutUs from "./AboutUs";
-import Laptop from "./Laptop";
-import Phone from "./Phone";
 import ShopByBrand from "./ShopByBrand";
-import Tablet from "./Tablet";
+import Authentication from "./Authentication";
+import Products from "./Products";
+import ErrorPage from "./ErrorPage";
+import CategoryProducts from "./CategoryProducts";
 
 export {
   ShopByBrand,
-  Phone,
   Homepage,
-  Accessories,
   CustomerSupport,
   AboutUs,
-  Laptop,
-  Tablet,
+  Authentication,
+  ErrorPage,
+  Products,
+  CategoryProducts,
 };

@@ -1,0 +1,19 @@
+.brand_management{
+    form{
+    display: flex;
+    flex-direction: column;
+    width: 80rem;
+    margin: 1rem auto;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-size-p;
+    color:$secondaryColor;
+    input{
+        width:60rem;
+        font-size:$font-size-p;
+        padding-bottom: 1rem;
+        margin: 1rem auto;
+    }
+  
+    }
+}

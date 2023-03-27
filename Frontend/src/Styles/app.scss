@@ -1,13 +1,67 @@
+// fonts
+
+// sass essentials
 @import './themes/theme';
 @import './themes/typography';
+@import './mixins/allmixins';
+// Layouts
+@import './layouts/sidebar';
+@import './layouts/maincontainer';
+@import './layouts/dashboard';
+@import './layouts/userLayout';
+
+// screens
+@import './screens/authentication';
+@import './screens/aboutus';
+@import './screens/customersupport';
+@import './screens/errorpage';
+@import './screens/shopbybrand';
+@import './screens/productspage';
+
+// component
+// client
+@import './components/Client/accordian';
+@import './components/Client/categoriesContainer';
+@import './components/Client/footer';
+@import './components/Client/inputdata';
+@import './components/Client/keyfacilities';
+@import './components/Client/navbar';
 @import './components/Client/sales';
 @import './components/Client/searchsection';
-@import './components/Client/navbar';
-@import './layouts/footer';
-@import './layouts/subscriptionSection';
-@import './components/Client/keyfacilities';
-@import './layouts/categoriesContainer';
+@import './components/Client/subscriptionSection';
+@import './components/Client/loader';
+
+// product
 @import './components/Products/productSection';
+@import './components/Products/productpage';
+@import './components/Products/gridList';
+@import './components/Products/productPreview';
+@import './components/Products/filterbox';
+// Authentication
+@import './components/Authentication/signin';
+@import './components/Authentication/signup';
+// user
+@import './components/User/profile';
+@import './components/User/updateProfile';
+// order
+@import './components/Order/shipping';
+@import './components/Order/checkoutsteps';
+@import './components/Order/paymentpage';
+
+// cart
+@import './components/Cart/cart';
+@import './components/Cart/cartitemcard';
+@import './components/Cart/confirmOrderPage';
+// admin
+@import './components//Admin/productlist';
+@import './components/Admin/adminSidebar';
+@import './components/Admin/tables';
+@import './components/Admin/category';
+@import './components/Admin/orders';
+@import './components/Admin/users';
+@import './components/Admin/brands';
+@import './components/Admin/addBrand';
+
 
 *{
     font-size: 62.7%;
@@ -15,7 +69,7 @@
         font-size: 55%;
     }
     @media screen and (max-width:768px) {
-        font-size: 43%;
+        font-size: 47%;
     }
 }
 
@@ -31,3 +85,23 @@ a {
     text-decoration:none; 
     cursor:pointer;  
 }}
+
+
+.active{
+    background-color: $primarycolor;
+    font-weight: 500;
+    padding: 1rem 2rem;
+}
+.two_grid_layout{
+    display: flex;
+
+}
+.header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.reacticons{
+    font-size: 5rem;
+}

@@ -1,0 +1,108 @@
+.grid_list{
+    height: 40rem;
+    inline-size: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-10%);
+    .buttonicon{
+        font-size: $font-size-h1;
+        margin: 2rem;
+        height: 20rem;
+        width: 3rem;
+        max-width: 3rem;
+        z-index: 99;
+        color: $primarycolor;
+    }
+    .productlist{
+        inline-size: 100%;
+        z-index: 98;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 23%;
+        gap: 2rem;
+        transition: transform 0.3s ease-in-out;
+         overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        &::-webkit-scrollbar{
+            display: none;
+        }   
+         @media screen and (max-width: 735px) and (min-width: 0px){
+            grid-auto-columns: 33%
+        }
+         @media screen and (max-width: 535px) and (min-width: 0px){
+            grid-auto-columns: 43%
+        }
+         @media screen and (max-width: 468px) and (min-width: 0px){
+            grid-auto-columns: 47%
+        }
+         @media screen and (max-width: 380px) and (min-width: 0px){
+            grid-auto-columns: 100%;
+        }
+    }
+       .snaps-inline{
+        scroll-snap-type: inline mandatory;
+        *{
+            scroll-snap-align: start;
+        }
+    }
+   
+}
+.grid_list_brands{
+    height: 25rem;
+    inline-size: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: translateY(-10%);
+    overflow: hidden;
+    .buttonicon{
+        font-size: $font-size-h1;
+        margin: 2rem;
+        height: 15rem;
+        width: 3rem;
+        max-width: 3rem;
+        z-index: 99;
+        color: $primarycolor;
+    }
+    .productlist{
+        inline-size: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 23%;
+        gap: 2rem;
+        z-index: 98;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        &::-webkit-scrollbar{
+            display: none;
+        }
+         @media screen and (max-width: 735px) and (min-width: 0px){
+            grid-auto-columns: 33%
+        }
+         @media screen and (max-width: 535px) and (min-width: 0px){
+            grid-auto-columns: 43%
+        }
+         @media screen and (max-width: 468px) and (min-width: 0px){
+            grid-auto-columns: 47%
+        }
+         @media screen and (max-width: 380px) and (min-width: 0px){
+            grid-auto-columns: 100%;
+        }        
+        div{
+            img{
+                mix-blend-mode: multiply;
+            }
+
+        }
+        @media screen and (max-width: 535px) and (min-width: 0px){
+            grid-auto-columns: 43%
+        }
+    }
+    .snaps-inline{
+        scroll-snap-type: inline mandatory;
+        *{
+            scroll-snap-align: start;
+        }
+    }
+}

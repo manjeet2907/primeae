@@ -30,7 +30,7 @@ const KeyFacilities = () => {
           <img src={ExtendedWarranty} alt='warranty' />
           <p>3 years Extended Warranty</p>
         </div>
-        <div className='kefacilities_list_facility_last'>
+        <div className='kefacilities_list_facility'>
           <img src={BrandGuarantee} alt='guarantee' />
           <p>Brand Guarantee</p>
         </div>

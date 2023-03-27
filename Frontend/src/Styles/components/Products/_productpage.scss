@@ -1,0 +1,187 @@
+.productPage{
+    background-color: $base3;
+    width: 100vw;
+    max-width: 100%;
+    padding: 6vmax;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    .productpage_carousel{
+        flex: 0.4;
+        border: 1px solid $base3;
+        .main_carousel{
+            display: flex;
+            flex-direction: row-reverse;
+            .carousel{
+               width: fit-content;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               max-width: 50rem;
+               padding: 0;
+                .slider-wrapper{
+                    z-index: 2;
+                    .slider{
+                        .slide{
+                            img{
+                                width: 30rem;
+                                height: 30rem;
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                        }
+                    }
+                }
+                .thumbs-wrapper{
+                    position: absolute;
+                    left: 1rem;
+                    top: 1rem;
+                    max-width: 20rem;
+                    z-index: 10;
+                    .thumbs{
+                    display: flex;
+                    padding: 0;
+                    flex-direction: column;
+                    .thumb{
+                        img{
+                            width: 5rem;
+                            height: 10rem;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    }
+                }
+
+            }
+        }
+      
+    }
+    .productpage_details{
+        flex:0.6;
+        .detailsBlock-2{
+            border: 0.1rem 0rem solid $base2;
+            padding: 1rem 0;
+            font-size: $font-size-p;
+            display: inline-flex;
+            align-items: center;
+            span{
+                font-size: $font-size-p;
+            }
+            .ratingcount{
+                font-size: $font-size-h3;
+                background-color: $primarycolor;
+                color: $base3;
+                width: 3rem;
+                height: 3rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .detailsBlock-3{
+            width: 70%;
+            .detailsBlock-3-1 {
+                display: flex;
+                align-items: center;
+                button{
+                   border: none;
+                    cursor: pointer;
+                    color: white;
+                    transition: all 0.5s;
+                    background-color: $primarycolor;
+                    border-radius: 20px;
+                    padding: 0.5vmax 2vmax;
+                    margin: 1rem;
+                    outline: none;
+                    font-size: $font-size-p;
+                }
+                .detailsBlock-3-1-1{
+                    display: flex;
+                    input {
+                        flex:0.3;
+                        border: none;
+                        padding: 0.5rem;
+                        text-align: center;
+                        outline: none;
+                        font-size: $font-size-p;
+                        color: rgba(0, 0, 0, 0.74);
+                    }
+                    button{
+                        flex:0.7;
+                        border: none;
+                        background-color: $primarycolor;
+                        padding: 0.5rem;
+                        cursor: pointer;
+                        color: $base3;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+        }
+        span{
+            width: 30rem;
+            display: flex;
+            p{
+              font-size: $font-size-p; 
+              margin-right: 1rem;
+            }
+        }
+        .detailsBlock-4{
+            font-size: $font-size-p;
+            width:70%;
+        }
+        .submitReview {
+            border: none;
+            background-color: $primarycolor;
+            font-size: $font-size-p;
+            border-radius: 2rem;
+            padding: 0.6rem 2rem;
+            margin: 1vmax 0;
+            color: white;
+            cursor: pointer;
+            transition: all 0.5s;
+            outline: none;
+            &:hover {
+                background-color: $primarycolor-dark;
+                transform: scale(1.1);
+            }           
+        }
+
+    }
+}
+.reviewSection{
+    width: 70%;
+    margin: 2rem auto;
+    border-top: 0.1rem solid $primarycolor-dark;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 5rem;
+    .dialog{
+       .dialog_title{
+        font-size: $font-size-p;
+       } 
+       .submitDialog{
+        font-size: $font-size-p;
+        display: flex;
+        flex-direction: column;
+        .ratingstars{
+            font-size: 5rem;
+        }
+       }
+       .dialogue_action{
+        display: flex;
+        margin-top: 0.5rem;
+        justify-content: space-between;
+        button{
+            font-size: $font-size-p;
+            padding: 0.5rem 1rem;
+            background-color: $primarycolor;
+        }
+       }
+       .reviews{
+        border-top: 0.1rem solid $primarycolor;
+       }
+    }
+}

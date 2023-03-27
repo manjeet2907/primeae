@@ -1,0 +1,106 @@
+.confirmOrderPage{
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+    .confirmshippingArea{
+        padding: 5rem;
+        padding-bottom: 0%;
+        .confirmshippingAreaBox,.confirmCartItemsContainer{
+            margin: 2rem;
+            p{
+                font-size: $font-size-p;
+            }
+            div{
+                 display: flex;
+                 margin: 1rem 0;
+                 p{
+                    font-size: $font-size-p;
+                 }
+                 span{
+                    margin: 0 1vmax;
+                    font-size: $font-size-p;
+                    color: #575757;
+                 }
+            }
+        }
+    }
+    .confirmCartItems {
+        font-size: $font-size-p;
+        padding: 5rem;
+        padding-top: 2rem;
+        .confirmCartItemsContainer {
+            max-height: 20rem;
+            overflow-y: auto;
+            div{
+                display: flex;
+                font-size: $font-size-p;
+                align-items: center;
+                justify-content: space-between;
+                margin: 2rem 0;
+                img{
+                    width: 10rem;
+                }
+                a{
+                    color: $primarycolor-dark;
+                    margin: 0 2rem;
+                    width: 60%;
+                    text-decoration: none;
+                    font-size: $font-size-p;
+                }
+                span{
+                    font-size: $font-size-p;
+                    color: $primarycolor;
+                }
+            }
+        }
+    }
+    .orderSummary{
+        margin-top: 3rem;
+        padding: 2rem;
+        border: 0.1rem solid $primarycolor-dark;
+        box-shadow: 0rem 0rem 0.4rem #888888;
+        div{
+            p,span{
+                font-size: $font-size-p;
+                border-bottom: 0.1rem solid $primarycolor-dark;
+                padding: 1rem;
+                width: 100%;
+                margin: auto;
+            }
+            div{
+                display: flex;
+                font-size: $font-size-p;
+                justify-content: space-between;
+                margin: 2rem 0;
+            }
+        }
+        .orderSummaryTotal{
+            display: flex;
+            border-top: 0.1rem solid $primarycolor-dark;
+            padding: 2rem 0;
+            p,span{
+                font-size: $font-size-p;
+            }
+        }
+        button{
+                background-color: $primarycolor;
+                color: $base3;
+                width: 100%;
+                padding: 1rem;
+                border: none;
+                margin: auto;
+                cursor: pointer;
+                transition: 0.5s;
+                font-size: $font-size-p;
+                &:hover{
+                    background-color: $primarycolor-dark;
+                }
+            }
+    }
+    @media screen and (max-width: 535px) and (min-width: 0px){
+                display: flex;
+                flex-direction: column-reverse;
+                
+            }
+}
