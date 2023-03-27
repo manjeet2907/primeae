@@ -43,6 +43,7 @@
 // user
 @import './components/User/profile';
 @import './components/User/updateProfile';
+@import './components/User/updatePassword';
 // order
 @import './components/Order/shipping';
 @import './components/Order/checkoutsteps';
@@ -61,7 +62,7 @@
 @import './components/Admin/users';
 @import './components/Admin/brands';
 @import './components/Admin/addBrand';
-
+@import './components/Admin/admindashboard';
 
 *{
     font-size: 62.7%;

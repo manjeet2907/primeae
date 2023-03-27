@@ -39,23 +39,31 @@ const AdminDashboard = () => {
       <h1 component='h1'>Dashboard</h1>
 
       <div className='dashboardSummary'>
-        <div>
-          <p>
-            Total Amount <br /> ₹{totalAmount}
-          </p>
-        </div>
-        <div className='dashboardSummaryBox2'>
-          <Link to='/admin/products'>
-            <p>Product</p>
-            <p>{products && products.length}</p>
+        <h4>Total Amount AED- {totalAmount}</h4>
+
+        <div className='dashboardSummary2'>
+          <Link to='/products'>
+            <p>Products - </p>
+            <p>
+              Total Products Count <br />
+              {products && products.length}
+            </p>
           </Link>
           <Link to='/admin/orders'>
-            <p>Orders</p>
-            <p>{orders && orders.length}</p>
+            <p>Orders -</p>
+            <p>
+              Total Orders Placed
+              <br />
+              {orders && orders.length}
+            </p>
           </Link>
-          <Link to='/admin/users'>
-            <p>Users</p>
-            <p>{users && users.length}</p>
+          <Link to='/users'>
+            <p>Users -</p>
+            <p>
+              Total Customers
+              <br />
+              {users && users.length}
+            </p>
           </Link>
         </div>
       </div>

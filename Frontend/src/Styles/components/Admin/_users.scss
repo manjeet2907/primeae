@@ -8,5 +8,7 @@
     align-items: center;
     .usersList{
         min-width: 80rem;
+        font-size: $font-size-p;
+        color: $secondaryColor;
     }
 }

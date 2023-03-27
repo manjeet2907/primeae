@@ -79,7 +79,8 @@ const ProductList = () => {
                 ProductId: product._id,
                 Stock: product.Stock,
                 price: product.price,
-                Product_Name: product.name,
+                Product_Name: <p>{product.name.substring(0, 50)}...</p>,
+
                 Edit: (
                   <Link
                     to={`/admin/product/${product._id}`}

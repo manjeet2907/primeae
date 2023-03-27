@@ -1914,6 +1914,18 @@ p {
 
 .profileContainer .profileContainer_left a {
   font-size: 2.8rem;
+  margin-right: 2rem;
+  text-decoration: none;
+  color: #d4a853;
+}
+
+.profileContainer .profileContainer_left h1 {
+  color: #d4a853;
+  padding-bottom: 1.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .profileContainer .profileContainer_right {
@@ -1928,6 +1940,9 @@ p {
 
 .profileContainer .profileContainer_right a {
   font-size: 2.8rem;
+  margin-right: 2rem;
+  text-decoration: none;
+  color: #d4a853;
 }
 
 .updateProfilePage {
@@ -2004,6 +2019,77 @@ p {
 
 .updateProfilePage .updateProfileBox .updateProfileForm input[type="submit"]:hover {
   background-color: #9c721d;
+}
+
+.updatePassword_page {
+  width: 90vw;
+  margin: 1rem auto;
+  min-height: 50rem;
+}
+
+.updatePassword_page .updatePassword_Box .updatePassword_Heading {
+  color: #d4a853;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-bottom: 0.1rem solid #9c721d;
+}
+
+.updatePassword_page .updatePassword_Box .updatePassword_Form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+  padding: 2rem;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  min-height: 70%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.updatePassword_page .updatePassword_Box .updatePassword_Form .loginPassword {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.updatePassword_page .updatePassword_Box .updatePassword_Form .loginPassword svg {
+  font-size: 3rem;
+}
+
+.updatePassword_page .updatePassword_Box .updatePassword_Form .loginPassword input {
+  width: 40rem;
+  font-size: 1.6rem;
+}
+
+.updatePassword_page .updatePassword_Box .updatePassword_Form .loginPassword input:hover {
+  background-color: #9c721d;
+  color: #fff;
+}
+
+.updatePassword_page .updatePassword_Box .updatePassword_Form input {
+  width: 45rem;
+  background-color: #d4a853;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 0.1rem solid #9c721d;
+  margin-bottom: 1rem;
+  -webkit-transition: 0.5s ease all;
+  transition: 0.5s ease all;
+}
+
+.updatePassword_page .updatePassword_Box .updatePassword_Form input:hover {
+  background-color: #9c721d;
+  color: #fff;
 }
 
 .shippingpage {
@@ -2255,6 +2341,15 @@ p {
   font-size: 1.6rem;
   padding: 1rem 2rem;
   border-radius: 2rem;
+  cursor: pointer;
+  width: 100%;
+  color: #fff;
+  -webkit-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+
+.cart .checkout_box .checkOutBtn button:hover {
+  background-color: #9c721d;
 }
 
 @media screen and (max-width: 735px) and (min-width: 0px) {
@@ -2477,7 +2572,7 @@ p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 80vw;
+  max-width: 80vw;
   margin: 1rem auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -2626,6 +2721,14 @@ p {
   font-weight: bold;
 }
 
+.adminSidebar a::-moz-selection {
+  color: #000000;
+}
+
+.adminSidebar a::selection {
+  color: #000000;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -2659,6 +2762,7 @@ table tbody tr td {
   padding: 1.2rem;
   font-size: 1.6rem;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .category_admin {
@@ -2744,6 +2848,8 @@ table tbody tr td {
 
 .userspage_admin .usersList {
   min-width: 80rem;
+  font-size: 1.6rem;
+  color: #000000;
 }
 
 .brandsPage {
@@ -2850,6 +2956,46 @@ table tbody tr td {
   font-size: 1.6rem;
   padding-bottom: 1rem;
   margin: 1rem auto;
+}
+
+.dashboardContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboardContainer .dashboardSummary .dashboardSummary2 {
+  width: 80rem;
+  margin-top: 2rem;
+  border-top: 0.1rem solid #9c721d;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr  1fr;
+      grid-template-columns: 1fr 1fr  1fr;
+}
+
+.dashboardContainer .dashboardSummary .dashboardSummary2 a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboardContainer .dashboardSummary .dashboardSummary2 a p {
+  text-decoration: none;
+  color: #000000;
+  font-size: 2.4rem;
+}
+
+.dashboardContainer .dashboardSummary .dashboardSummary2 a p:hover {
+  text-decoration: underline;
 }
 
 * {

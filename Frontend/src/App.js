@@ -179,7 +179,7 @@ function App() {
         <Route
           path='/admin/product/:id'
           element={<AuthRouter allowedRoles={[ROLES.Admin]} />}>
-          <Route path='product/:id' element={<Dashboard />}>
+          <Route path='/admin/product/:id' element={<Dashboard />}>
             <Route index element={<UpdateProduct />} />
           </Route>
         </Route>

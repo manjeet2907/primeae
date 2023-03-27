@@ -23,6 +23,9 @@
             border-bottom: 1rem solid $primarycolor-dark;
             font-weight: bold;
         }
+        &::selection{
+            color: $secondaryColor;
+        }
 
         
         

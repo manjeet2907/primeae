@@ -5,7 +5,7 @@
   "description": "Backend for Mobile Store",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "author": "Manjeet Saini",
   "license": "ISC",

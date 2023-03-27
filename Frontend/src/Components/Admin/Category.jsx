@@ -3,10 +3,11 @@ import { MetaData } from "../../Layouts";
 import CreateTable from "./CreateTable";
 import { useDispatch, useSelector } from "react-redux";
 
-import { AiFillDelete } from "react-icons/ai";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import MyAccordian from "../Client/Accordian";
 import CreateCategory from "./CreateCategory";
 import { allCategories } from "../../store/actions/categoryAction";
+import { Link } from "react-router-dom";
 
 const headers = ["id", "Category name", "Created By", "Edit", "Delete"];
 
@@ -39,9 +40,16 @@ const Category = () => {
                 "Category name": category.name,
                 "Created By": "admin",
                 Delete: (
-                  <button onClick={() => deleteCategoryHandler(category._id)}>
+                  <button
+                    className='reacticons_admin'
+                    onClick={() => deleteCategoryHandler(category._id)}>
                     <AiFillDelete />
                   </button>
+                ),
+                Edit: (
+                  <Link to={``} className='reacticons_admin'>
+                    <AiFillEdit />
+                  </Link>
                 ),
               })
             )}

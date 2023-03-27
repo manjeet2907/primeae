@@ -9,7 +9,15 @@
     margin-right: 5rem;
     flex-direction: column;
     a{
-       font-size: $font-size-h3; 
+       font-size: $font-size-h3;
+          margin-right: 2rem;
+        text-decoration: none;
+        color: $primarycolor; 
+    }
+    h1{
+      color: $primarycolor;
+      padding-bottom: 1.5rem;
+      user-select: none;
     }
  }
  .profileContainer_right{
@@ -17,6 +25,10 @@
     flex-direction: column;
     a{
         font-size: $font-size-h3;
+        margin-right: 2rem;
+        text-decoration: none;
+        color: $primarycolor;
+
     }
  }
 }

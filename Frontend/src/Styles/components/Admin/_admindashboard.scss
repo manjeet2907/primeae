@@ -1,0 +1,26 @@
+.dashboardContainer{
+    display: flex;
+    flex-direction: column;
+    .dashboardSummary{
+        .dashboardSummary2{
+            width: 80rem;
+            margin-top: 2rem;
+            border-top: 0.1rem solid $primarycolor-dark;
+            display: grid;
+            grid-template-columns: 1fr 1fr  1fr ;
+            a{
+                display: flex;
+                flex-direction: column;
+                p{
+
+                    text-decoration: none;
+                    color: $secondaryColor;
+                    font-size: $font-size-h4;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }    
+            }
+        }
+    }
+}

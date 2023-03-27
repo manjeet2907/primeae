@@ -21,7 +21,7 @@ const CheckoutSteps = ({ activeStep }) => {
 
   const stepStyles = {
     boxSizing: "border-box",
-    fontSize: "15rem",
+    fontSize: "22rem",
   };
 
   return (

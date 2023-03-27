@@ -1,15 +1,133 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { MetaData } from "../../Layouts";
+import { AiOutlineMail } from "react-icons/ai";
+import { FaUserCheck } from "react-icons/fa";
+import { BsFillPersonFill } from "react-icons/bs";
 
-const UpdateUser = () => {
-  return (
-    <>
-      <MetaData title='Users-Admin' />
-      <div className='UserUpdatepage_admin'>
-        <h3>User Update Management</h3>
-      </div>
-    </>
-  );
+import {
+  clearErrors,
+  getUserDetails,
+  updateUser,
+} from "../../store/actions/userAction";
+import { UPDATE_USER_RESET } from "../../store/constants/userConstants";
+import { Loader } from "../Client";
+
+const UpdateUser = ({ match }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { loading, error, user } = useSelector((state) => state.userDetails);
+
+  const {
+    loading: updateLoading,
+    error: updateError,
+    isUpdated,
+  } = useSelector((state) => state.profile);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [role, setRole] = useState("");
+
+  const userId = match.params.id;
+
+  useEffect(() => {
+    if (user && user._id !== userId) {
+      dispatch(getUserDetails(userId));
+    } else {
+      setName(user.name);
+      setEmail(user.email);
+      setRole(user.role);
+    }
+    if (error) {
+      toast.error(error);
+      dispatch(clearErrors());
+    }
+
+    if (updateError) {
+      toast.error(updateError);
+      dispatch(clearErrors());
+    }
+
+    if (isUpdated) {
+      toast.success("User Updated Successfully");
+      navigate("/admin/users");
+      dispatch({ type: UPDATE_USER_RESET });
+    }
+  }, [dispatch, error, isUpdated, updateError, user, userId]);
+
+  const updateUserSubmitHandler = (e) => {
+    e.preventDefault();
+
+    const myForm = new FormData();
+
+    myForm.set("name", name);
+    myForm.set("email", email);
+    myForm.set("role", role);
+
+    dispatch(updateUser(userId, myForm));
+    return (
+      <>
+        <MetaData title='Users-Admin' />
+        <div className='UserUpdatepage_admin'>
+          <h3>User Update Management</h3>
+          <div className='newProductContainer'>
+            {loading ? (
+              <Loader />
+            ) : (
+              <form
+                className='createProductForm'
+                onSubmit={updateUserSubmitHandler}>
+                <h1>Update User</h1>
+
+                <div>
+                  <BsFillPersonFill />
+                  <input
+                    type='text'
+                    placeholder='Name'
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <AiOutlineMail />
+                  <input
+                    type='email'
+                    placeholder='Email'
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </div>
+
+                <div>
+                  <FaUserCheck />
+                  <select
+                    value={role}
+                    onChange={(e) => setRole(e.target.value)}>
+                    <option value=''>Choose Role</option>
+                    <option value='admin'>Admin</option>
+                    <option value='user'>User</option>
+                  </select>
+                </div>
+
+                <button
+                  id='createProductBtn'
+                  type='submit'
+                  disabled={
+                    updateLoading ? true : false || role === "" ? true : false
+                  }>
+                  Update
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      </>
+    );
+  };
 };
 
 export default UpdateUser;
