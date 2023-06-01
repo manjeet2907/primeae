@@ -26,7 +26,8 @@ export const createBrand = (brandData) => async (dispatch) => {
       },
     };
     const { data } = await axios.post("/admin/brand/new", brandData, config);
-    dispatch({ type: CREATE_BRAND_SUCCESS, payload: data.brand });
+
+    dispatch({ type: CREATE_BRAND_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
       type: CREATE_BRAND_FAIL,

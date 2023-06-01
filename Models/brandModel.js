@@ -4,8 +4,6 @@ const brandSchema = mongoose.Schema({
   name: {
     type: String,
     required: [true, "Please Enter a Brand name"],
-    unique: true,
-    index: true,
   },
   image: {
     public_id: {

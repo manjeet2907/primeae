@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { InputData } from "../Client";
-import { useDispatch } from "react-redux";
-import { createBrand } from "../../store/actions/brandAction";
+import { useDispatch, useSelector } from "react-redux";
+import { clearErrors, createBrand } from "../../store/actions/brandAction";
 import { toast } from "react-hot-toast";
+import { CREATE_BRAND_RESET } from "../../store/constants/brandConstants";
 
 const AddBrand = () => {
   const dispatch = useDispatch();
+  const { loading, error, success } = useSelector((state) => state.createBrand);
+  const navigate = useNavigate();
 
   const [name, setName] = useState("");
   const [image, setImage] = useState("");
@@ -33,12 +36,19 @@ const AddBrand = () => {
     myForm.set("image", image);
 
     dispatch(createBrand(myForm));
-    setName("");
-    setImage("");
-    setImagesPreview("");
-    toast.success("Brand Created Successfully");
   };
+  useEffect(() => {
+    if (error) {
+      toast.error(error);
+      dispatch(clearErrors());
+    }
 
+    if (success) {
+      toast.success("Brand Created Successfully");
+      navigate("/admin");
+      dispatch({ type: CREATE_BRAND_RESET });
+    }
+  }, [dispatch, error, navigate, success]);
   return (
     <>
       <h3>Create Brand</h3>
@@ -66,7 +76,11 @@ const AddBrand = () => {
           <div id='createBrandFormImage'>
             {imagesPreview && <img src={imagesPreview} alt='Brand Preview' />}
           </div>
-          <button className='primary_button' id='createBrandBtn' type='submit'>
+          <button
+            className='primary_button'
+            id='createBrandBtn'
+            type='submit'
+            disabled={loading ? true : false}>
             Create Brand
           </button>
         </form>

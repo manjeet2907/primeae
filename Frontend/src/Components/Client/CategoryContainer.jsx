@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, lazy, Suspense } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { allBrands } from "../../store/actions/brandAction";
 import { clearErrors, getProduct } from "../../store/actions/productAction";
-import GridList from "../Products/GridList";
-import GridListBrand from "./GridListBrands";
+
+const GridList = lazy(() => import("../Products/GridList"));
+const GridListBrand = lazy(() => import("./GridListBrands"));
 
 const CategoryContainer = () => {
   const dispatch = useDispatch();
@@ -36,6 +37,7 @@ const CategoryContainer = () => {
   };
 
   let count = filteredProductsCount;
+
   useEffect(() => {
     if (error) {
       toast.error(error);
@@ -52,13 +54,13 @@ const CategoryContainer = () => {
     navigate("/shopbybrand");
   };
 
-  const filteredNewProducts = products.filter(
+  const filteredNewProducts = products?.filter(
     (product) => product.isNewProduct
   );
-  const filteredFeaturedProducts = products.filter(
+  const filteredFeaturedProducts = products?.filter(
     (product) => product.isFeatured
   );
-  const filteredPrimeProducts = products.filter((product) => product.isPrime);
+  const filteredPrimeProducts = products?.filter((product) => product.isPrime);
   return (
     <>
       <div className='new_categories_container'>
@@ -67,10 +69,12 @@ const CategoryContainer = () => {
             <div className='productSection_heading_name'>
               <p>New Products</p>
             </div>
-            <p onClick={onclickProducthandler}>View All</p>
+            <p onClick={onclickProducthandler}></p>
           </div>
           <div className='productSection_productlist'>
-            {<GridList griddata={filteredNewProducts} />}
+            <Suspense fallback={<div className='loadText'></div>}>
+              <GridList griddata={filteredNewProducts} />
+            </Suspense>
           </div>
         </div>
       </div>
@@ -80,10 +84,12 @@ const CategoryContainer = () => {
             <div className='productSection_heading_name'>
               <p>Featured Products</p>
             </div>
-            <p onClick={onclickProducthandler}>View All</p>
+            <p onClick={onclickProducthandler}></p>
           </div>
           <div className='productSection_productlist'>
-            {<GridList griddata={filteredFeaturedProducts} />}
+            <Suspense fallback={<div className='loadText'></div>}>
+              <GridList griddata={filteredFeaturedProducts} />
+            </Suspense>
           </div>
         </div>
       </div>
@@ -93,10 +99,12 @@ const CategoryContainer = () => {
             <div className='productSection_heading_name'>
               <p>Our Prime Products</p>
             </div>
-            <p onClick={onclickProducthandler}>View All</p>
+            <p onClick={onclickProducthandler}></p>
           </div>
           <div className='productSection_productlist'>
-            {<GridList griddata={filteredPrimeProducts} />}
+            <Suspense fallback={<div className='loadText'></div>}>
+              <GridList griddata={filteredPrimeProducts} />
+            </Suspense>
           </div>
         </div>
       </div>
@@ -106,10 +114,10 @@ const CategoryContainer = () => {
             <div className='productSection_heading_name'>
               <p>Brands We Deal In</p>
             </div>
-            <p onClick={onclickBrandhandler}>Browse All</p>
+            <div className='exploretab' onClick={onclickBrandhandler}></div>
           </div>
           <div className='productSection_productlist'>
-            {<GridListBrand griddata={brands} />}
+            <GridListBrand griddata={brands} />
           </div>
         </div>
       </div>

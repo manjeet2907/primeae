@@ -39,8 +39,8 @@ import {
   updateBradReducer,
   getbrandReducer,
 } from "./reducers/brandReducer";
-// import { persistStore, persistReducer } from "redux-persist";
-// import storage from "redux-persist/lib/storage";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 const reducer = combineReducers({
   products: productsReducer,
@@ -71,13 +71,13 @@ const reducer = combineReducers({
   getCategory: getCategoryReducer,
 });
 
-// const persistConfig = {
-//   key: "root",
-//   storage,
-//   blacklist: ["user"],
-// };
+const persistConfig = {
+  key: "root",
+  storage,
+  blacklist: ["user"],
+};
 
-// const persistedReducer = persistReducer(persistConfig, reducer);
+const persistedReducer = persistReducer(persistConfig, reducer);
 
 let initialState = {
   cart: {
@@ -93,11 +93,11 @@ let initialState = {
 const middleware = [thunk];
 
 const store = createStore(
-  reducer,
+  persistedReducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middleware))
 );
 
-// const persistor = persistStore(store);
+const persistor = persistStore(store);
 export default store;
-// export { store, persistor };
+export { persistor };

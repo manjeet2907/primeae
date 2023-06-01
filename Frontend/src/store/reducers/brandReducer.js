@@ -2,6 +2,7 @@ import {
   CREATE_BRAND_REQUEST,
   CREATE_BRAND_SUCCESS,
   CREATE_BRAND_FAIL,
+  CREATE_BRAND_RESET,
   ALL_BRAND_REQUEST,
   ALL_BRAND_SUCCESS,
   ALL_BRAND_FAIL,
@@ -33,6 +34,11 @@ export const createBrandReducer = (state = {}, action) => {
       return {
         loading: false,
         error: action.payload,
+      };
+    case CREATE_BRAND_RESET:
+      return {
+        ...state,
+        success: false,
       };
     case CLEAR_ERRORS:
       return {

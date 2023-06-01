@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import {
+  AddBrand,
   AddnewProduct,
   AdminDashboard,
   Brand,
@@ -195,6 +196,13 @@ function App() {
           element={<AuthRouter allowedRoles={[ROLES.Admin]} />}>
           <Route path='/brands' element={<Dashboard />}>
             <Route index element={<Brand />} />
+          </Route>
+        </Route>
+        <Route
+          path='/brand'
+          element={<AuthRouter allowedRoles={[ROLES.Admin]} />}>
+          <Route path='/brand' element={<Dashboard />}>
+            <Route index element={<AddBrand />} />
           </Route>
         </Route>
         <Route

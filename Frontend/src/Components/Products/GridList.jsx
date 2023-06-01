@@ -1,67 +1,68 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  BsFillArrowLeftSquareFill,
-  BsFillArrowRightSquareFill,
-} from "react-icons/bs";
-import ProductPreviewMain from "./ProductPreviewMain";
+import React, { lazy, Suspense, useRef } from "react";
+
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Slider from "react-slick";
+import ProductLoader from "../Client/ProductLoader";
+const ProductPreviewMain = lazy(() => import("./ProductPreviewMain"));
+// import ProductPreviewMain from "./ProductPreviewMain";
 
 const GridList = ({ griddata }) => {
-  const [scrollLeft, setScrollLeft] = useState(0);
-  const gridListRef = useRef(null);
-
-  const handleScrollLeft = () => {
-    setScrollLeft(scrollLeft - 150);
+  const sliderRef = useRef(null);
+  const settings = {
+    infinite: true,
+    slidesToShow: 4.8,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    dots: false,
+    className: "innerdivSlider",
+    responsive: [
+      {
+        breakpoint: 1224,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
-
-  const handleScrollRight = () => {
-    setScrollLeft(scrollLeft + 150);
-  };
-
-  useEffect(() => {
-    const gridList = gridListRef.current;
-    let interval = null;
-
-    const startAutoScroll = () => {
-      interval = setInterval(() => {
-        setScrollLeft((scrollLeft) => scrollLeft - 150);
-      }, 3000);
-    };
-
-    const stopAutoScroll = () => {
-      clearInterval(interval);
-    };
-
-    gridList.addEventListener("mouseenter", stopAutoScroll);
-    gridList.addEventListener("mouseleave", startAutoScroll);
-
-    startAutoScroll();
-
-    return () => {
-      gridList.removeEventListener("mouseenter", stopAutoScroll);
-      gridList.removeEventListener("mouseleave", startAutoScroll);
-      clearInterval(interval);
-    };
-  }, []);
 
   return (
     <div className='grid_list'>
-      <button className='buttonicon' onClick={handleScrollLeft}>
-        <BsFillArrowLeftSquareFill />
-      </button>
-
-      <div
-        className='productlist snaps-inline'
-        ref={gridListRef}
-        style={{ Left: `${scrollLeft}px` }}>
+      <Slider ref={sliderRef} {...settings}>
         {griddata &&
           griddata.map((product) => (
-            <ProductPreviewMain key={product._id} product={product} />
+            <Suspense key={product._id} fallback={<ProductLoader />}>
+              <ProductPreviewMain product={product} />
+            </Suspense>
           ))}
-      </div>
-
-      <button className='buttonicon' onClick={handleScrollRight}>
-        <BsFillArrowRightSquareFill />
-      </button>
+      </Slider>
     </div>
   );
 };

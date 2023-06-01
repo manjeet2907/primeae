@@ -80,7 +80,6 @@ const AddNewProduct = () => {
     images.forEach((image) => {
       myForm.append("images", image);
     });
-    console.log("myform data frontend", myForm);
     dispatch(createProduct(myForm));
   };
   useEffect(() => {

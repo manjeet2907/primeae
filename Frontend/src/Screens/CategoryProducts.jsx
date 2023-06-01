@@ -51,7 +51,7 @@ const CategoryProducts = () => {
   };
 
   let count = filteredProductsCount;
-  const Category = category._id;
+  const Category = category?._id;
   useEffect(() => {
     if (error) {
       toast.error(error);
@@ -63,17 +63,17 @@ const CategoryProducts = () => {
 
   return (
     <>
-      <MetaData title={category.name} />
+      <MetaData title={category?.name} />
       <div className='two_grid_layout'>
         <Sidebar>
           <div className='filterbox'>
             <p>Categories:</p>
             <ul className='filterbox_categorybox'>
-              <p className='selectedcategory'>{category.name}</p>
+              <p className='selectedcategory'>{category?.name}</p>
             </ul>
             <p>Brands:</p>
             <ul className='filterbox_categorybox'>
-              {brands.map((brand) => (
+              {brands?.map((brand) => (
                 <li
                   className='filterbox_category'
                   key={brand._id}
@@ -110,7 +110,7 @@ const CategoryProducts = () => {
             </fieldset>
           </div>
         </Sidebar>
-        <MainContainer title={category.name} productlength={products.length}>
+        <MainContainer title={category?.name} productlength={products?.length}>
           <div className='allProductsContainer'>
             {loading && <Loader />}
             {products &&

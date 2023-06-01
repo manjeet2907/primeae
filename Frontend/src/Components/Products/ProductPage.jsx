@@ -11,17 +11,37 @@ import { NEW_REVIEW_RESET } from "../../store/constants/productConstants";
 import { Loader } from "../Client";
 import Rating from "@mui/material/Rating";
 import ReviewCard from "./ReviewCard";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import { useParams } from "react-router-dom";
 import { addItemsToCart } from "../../store/actions/cartAction";
 import { AiFillStar } from "react-icons/ai";
+import { useRef } from "react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Slider from "react-slick";
 
 const ProductPage = () => {
   const dispatch = useDispatch();
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  const slider1Ref = useRef(null);
+  const slider2Ref = useRef(null);
+
+  useEffect(() => {
+    setNav1(slider1Ref.current);
+    setNav2(slider2Ref.current);
+  }, []);
+
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
+  const { brands } = useSelector((state) => state.allBrands);
+
+  const displayBrand = (brandId) => {
+    const brand = brands?.find((brand) => brand._id === brandId);
+    return brand ? brand.name : <div className='loadText'></div>;
+  };
 
   const { id } = useParams();
   const { success, error: reviewError } = useSelector(
@@ -94,19 +114,33 @@ const ProductPage = () => {
           <MetaData title={`${product.name} -- ECOMMERCE`} />
           <div className='productPage'>
             <div className='productpage_carousel'>
-              <Carousel
-                autoPlay={true}
-                infiniteLoop={true}
+              <Slider
+                asNavFor={nav2}
+                ref={slider1Ref}
                 className='main_carousel'>
                 {product.images &&
                   product.images.map((item, i) => (
                     <img key={i} src={item.url} alt={`${i} Slide`} />
                   ))}
-              </Carousel>
+              </Slider>
+              <Slider
+                asNavFor={nav1}
+                ref={slider2Ref}
+                slidesToShow={3}
+                swipeToSlide={true}
+                focusOnSelect={true}
+                className='sec_carousel'>
+                {product.images &&
+                  product.images.map((item, i) => (
+                    <img key={i} src={item.url} alt={`${i} Slide`} />
+                  ))}
+              </Slider>
             </div>
             <div className='productpage_details'>
               <div className='detailsBlock-1'>
-                <h4>{product.brand}</h4>
+                {displayBrand(product.brand) && (
+                  <p>displayBrand(product.brand)</p>
+                )}
                 <h2>{product.name}</h2>
                 <p>Product # {product._id}</p>
               </div>

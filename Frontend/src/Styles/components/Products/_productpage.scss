@@ -8,57 +8,46 @@
     flex-wrap: wrap;
     .productpage_carousel{
         flex: 0.4;
-        border: 1px solid $base3;
+        width: 40%;
         .main_carousel{
+            max-width: 90%;
             display: flex;
-            flex-direction: row-reverse;
-            .carousel{
-               width: fit-content;
-               display: flex;
-               justify-content: center;
-               align-items: center;
-               max-width: 50rem;
-               padding: 0;
-                .slider-wrapper{
-                    z-index: 2;
-                    .slider{
-                        .slide{
-                            img{
-                                width: 30rem;
-                                height: 30rem;
-                                object-fit: cover;
-                                object-position: center;
-                            }
-                        }
-                    }
-                }
-                .thumbs-wrapper{
-                    position: absolute;
-                    left: 1rem;
-                    top: 1rem;
-                    max-width: 20rem;
-                    z-index: 10;
-                    .thumbs{
-                    display: flex;
-                    padding: 0;
-                    flex-direction: column;
-                    .thumb{
-                        img{
-                            width: 5rem;
-                            height: 10rem;
-                            object-fit: cover;
-                            object-position: center;
-                        }
-                    }
-                    }
-                }
-
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            img{
+                max-width: 30rem;
+                height: 30rem;
+                object-fit: cover;
+                object-position: center;
             }
         }
-      
+        .sec_carousel{
+            border: 0.1rem solid $base2;
+            max-width: 90%;
+            padding: 0rem 2rem;
+           
+            img{
+            max-width: 5rem;
+            height: 10rem;
+            object-fit: cover;
+            object-position: center;
+            cursor: pointer;
+            }
+        }
+        
+      @media screen and (max-width:610px) {
+        width: 100%;
+        flex:1;
+     } 
     }
     .productpage_details{
         flex:0.6;
+        .detailsBlock-1{
+            p{
+               font-style: italic; 
+            }
+        }
         .detailsBlock-2{
             border: 0.1rem 0rem solid $base2;
             padding: 1rem 0;
@@ -147,7 +136,19 @@
                 transform: scale(1.1);
             }           
         }
-
+    @media screen and (max-width:610px) {
+        width: 100%;
+        flex:1;
+        .detailsBlock-2{
+             align-items: flex-start;
+        }
+        .detailsBlock-3{
+            width: 100%;
+        }
+        .detailsBlock-4{
+             width:100%;
+        }
+     } 
     }
 }
 .reviewSection{
@@ -184,4 +185,58 @@
         border-top: 0.1rem solid $primarycolor;
        }
     }
+    @media screen and (max-width:610px) {
+        width: 100%;
+        margin: 1rem auto;
+        padding: 1rem 3rem;
+     } 
 }
+
+/*
+.main_carousel{
+            display: flex;
+            flex-direction: row-reverse;
+            .carousel{
+               width: fit-content;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               max-width: 50rem;
+               padding: 0;
+                .slider-wrapper{
+                    z-index: 2;
+                    .slider{
+                        .slide{
+                            img{
+                                width: 30rem;
+                                height: 30rem;
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                        }
+                    }
+                }
+                .thumbs-wrapper{
+                    position: absolute;
+                    left: 1rem;
+                    top: 1rem;
+                    max-width: 20rem;
+                    z-index: 10;
+                    .thumbs{
+                    display: flex;
+                    padding: 0;
+                    flex-direction: column;
+                    .thumb{
+                        img{
+                            width: 5rem;
+                            height: 10rem;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    }
+                }
+
+            }
+        }
+*/
